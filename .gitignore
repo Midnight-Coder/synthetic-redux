@@ -1,0 +1,17 @@
+# dependencies
+/node_modules
+
+# build
+dist/
+
+# testing
+/coverage
+
+# editor/IDE
+.idea/
+*.sublime-*
+
+# misc
+.DS_Store
+npm-debug.log*
+

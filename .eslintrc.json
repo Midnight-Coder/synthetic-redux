@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "eslint:recommended",
+  "plugins": [
+    "import"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "brace-style": ["warn", "stroustrup", { "allowSingleLine": true }],
+    "comma-dangle": ["error", "always-multiline"],
+    "import/newline-after-import": ["error", { "count": 2 }],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "export" },
+      { "blankLine": "never", "prev": "*", "next": "import" }
+    ],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
+  }
+}

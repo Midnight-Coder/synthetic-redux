@@ -1,0 +1,26 @@
+{
+  "name": "synthetic-redux",
+  "version": "1.0.0",
+  "description": "Sets up Redux boilerplate: actions, reducers and redux-saga for most common redux use cases",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Midnight-Coder/synthetic-redux.git"
+  },
+  "keywords": [
+    "redux",
+    "boilerplate",
+    "webapp",
+    "redux-saga"
+  ],
+  "author": "Sagar Jhobalia",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0"
+  }
+}

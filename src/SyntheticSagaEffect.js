@@ -10,7 +10,9 @@ const SyntheticSagaEffect = (syntheticAction) => {
   const igniteAction = syntheticAction.igniteName;
 
   const sagaFn = function* sagaFn(action) {
-    const response = yield call(action.method, action.url, action.payload);
+    let response;
+    try { response = yield call(action.method, action.url, action.payload); }
+    catch (exception) { return yield put(errorAction.generator({payload: { exception }})) }
     if (response.error) {
       Logger.error(`Url: ${action.url}. Error: ${response.error}`, action.errorMeta);
       return yield put(errorAction.generator({ payload: response }));

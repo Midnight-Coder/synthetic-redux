@@ -19,6 +19,8 @@
   "author": "Sagar Jhobalia",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/eslint-parser": "^7.15.4",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0"

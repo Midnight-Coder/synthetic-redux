@@ -5,9 +5,6 @@
 .cache/
 dist/
 
-# testing
-/coverage
-
 # editor/IDE
 .idea/
 *.sublime-*

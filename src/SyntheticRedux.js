@@ -1,7 +1,7 @@
-import SyntheticActions from 'syntheticRedux/SyntheticActions';
-import SyntheticReducer from 'syntheticRedux/SyntheticReducer';
-import SyntheticSagaEffect from 'syntheticRedux/SyntheticSagaEffect';
-import { CATEGORY_NAMES } from 'syntheticRedux/constants';
+import SyntheticActions from './SyntheticActions';
+import SyntheticReducer from './SyntheticReducer';
+import SyntheticSagaEffect from './SyntheticSagaEffect';
+import { CATEGORY_NAMES } from './constants';
 
 
 class SyntheticRedux {

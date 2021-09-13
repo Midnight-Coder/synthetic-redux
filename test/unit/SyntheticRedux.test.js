@@ -1,4 +1,4 @@
-import SyntheticRedux from 'syntheticRedux/SyntheticRedux';
+import SyntheticRedux from '../../src/SyntheticRedux';
 
 
 describe('Synthetic Redux', () => {

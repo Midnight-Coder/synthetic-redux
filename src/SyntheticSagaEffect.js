@@ -1,5 +1,4 @@
-import Logger from 'components/Common/Logger';
-import { ERROR_SUFFIX, SUCCESS_SUFFIX } from 'syntheticRedux/constants';
+import { ERROR_SUFFIX, SUCCESS_SUFFIX } from '../src/constants';
 import { call, put, takeLatest } from 'redux-saga/effects';
 
 
@@ -12,9 +11,11 @@ const SyntheticSagaEffect = (syntheticAction) => {
   const sagaFn = function* sagaFn(action) {
     let response;
     try { response = yield call(action.method, action.url, action.payload); }
-    catch (exception) { return yield put(errorAction.generator({payload: { exception }})) }
+    catch (exception) { return yield put(errorAction.generator({payload: { exception }})); }
     if (response.error) {
-      Logger.error(`Url: ${action.url}. Error: ${response.error}`, action.errorMeta);
+      if(typeof action.errorHandler === 'function') {
+        yield put(action.errorHandler(response, action));
+      }
       return yield put(errorAction.generator({ payload: response }));
     }
     else {

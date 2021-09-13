@@ -1,8 +1,6 @@
-import Logger from 'components/Common/Logger';
-import SyntheticAction from 'syntheticRedux/SyntheticActions';
-import SyntheticSagaEffect from 'syntheticRedux/SyntheticSagaEffect';
-import http from 'utils/http';
-import { CATEGORY_NAMES, ERROR_SUFFIX, SUCCESS_SUFFIX } from 'syntheticRedux/constants';
+import SyntheticSagaEffect from '../../src/SyntheticSagaEffect';
+import SyntheticAction from '../../src/SyntheticActions';
+import { CATEGORY_NAMES, ERROR_SUFFIX, SUCCESS_SUFFIX } from '../../src/constants';
 import { call, put } from 'redux-saga/effects';
 
 
@@ -11,11 +9,17 @@ describe('Synthetic Saga Effect', () => {
     * This test suite accesses bits of redux-saga internal implementations
     * The internals could change with library upgrades
   */
+  const httpPost = (url, payload) => fetch(url,
+  {
+    body: JSON.stringify(payload),
+    method: 'POST'
+  });
+
   const sampleAction = 'SAMPLE_ACTION';
   const syntheticAction = new SyntheticAction({ type: sampleAction }, CATEGORY_NAMES.CRUD);
   const ignitedAction = syntheticAction.ignite({
     errorMeta: 'Fetching Sample Response',
-    method: http.post,
+    method: httpPost,
     payload: 'some-filters',
     url: 'some-url',
   });
@@ -39,8 +43,8 @@ describe('Synthetic Saga Effect', () => {
     expect(sagaEffect.payload.args[0]).toEqual(syntheticAction.igniteName);
   });
 
-  it('should use http methods with action parameters passed', () => {
-    expect(sagaFn.next().value).toEqual(call(http.post, ignitedAction.url, ignitedAction.payload));
+  it('should use http method with action parameters passed', () => {
+    expect(sagaFn.next().value).toEqual(call(httpPost, ignitedAction.url, ignitedAction.payload));
   });
 
   it('should invoke success generator with response', () => {
@@ -65,21 +69,4 @@ describe('Synthetic Saga Effect', () => {
     expect(sagaFn.next().done).toEqual(true);
   });
 
-  it('should log API errors', () => {
-    const spy = jest.spyOn(Logger, 'error').mockImplementation(x => x);
-    const apiResponse = { error: 'some-error' };
-    sagaFn.next();
-    sagaFn.next(apiResponse);
-    expect(spy).toHaveBeenCalled();
-  });
-
-  it('should include errorMeta for logs', () => {
-    const spy = jest.spyOn(Logger, 'error').mockImplementation(x => x);
-    const apiResponse = { error: 'some-error' };
-    sagaFn.next();
-    sagaFn.next(apiResponse);
-    const [errorDetail, errorMeta] = spy.mock.calls[0];
-    expect(errorDetail).toContain(ignitedAction.url);
-    expect(errorMeta).toEqual(ignitedAction.errorMeta);
-  });
 });

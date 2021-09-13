@@ -1,4 +1,4 @@
-import { CATEGORY, CATEGORY_NAMES } from 'syntheticRedux/constants';
+import { CATEGORY, CATEGORY_NAMES } from './constants';
 
 
 class SyntheticActions {

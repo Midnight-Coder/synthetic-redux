@@ -1,4 +1,4 @@
-import { CATEGORY_NAMES } from 'syntheticRedux/constants';
+import { CATEGORY_NAMES } from './constants';
 
 
 const SyntheticReducer = (syntheticAction, objKey) => (state = {}, action) => {

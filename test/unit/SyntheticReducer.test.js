@@ -1,6 +1,6 @@
-import SyntheticAction from 'syntheticRedux/SyntheticActions';
-import SyntheticReducer from 'syntheticRedux/SyntheticReducer';
-import { CATEGORY_NAMES } from 'syntheticRedux/constants';
+import SyntheticAction from '../../src/SyntheticActions';
+import SyntheticReducer from '../../src/SyntheticReducer';
+import { CATEGORY_NAMES } from '../../src/constants';
 
 
 describe('Synthetic Reducer', () => {

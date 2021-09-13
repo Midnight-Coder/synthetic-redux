@@ -1,7 +1,7 @@
-import SyntheticAction from 'syntheticRedux/SyntheticActions';
+import SyntheticAction from '../../src/SyntheticActions';
 import {
   CATEGORY, CATEGORY_NAMES, ERROR_SUFFIX, SUCCESS_SUFFIX,
-} from 'syntheticRedux/constants';
+} from '../../src/constants';
 
 
 describe('Synthetic Actions', () => {

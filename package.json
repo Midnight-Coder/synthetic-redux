@@ -4,7 +4,7 @@
   "description": "Sets up Redux boilerplate: actions, reducers and redux-saga for most common redux use cases",
   "main": "index.js",
   "scripts": {
-    "build": "parcel src/index.js",
+    "build": "parcel build src/index.js",
     "test": "jest"
   },
   "repository": {

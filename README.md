@@ -60,8 +60,6 @@ Extends SyntheticAction APIs:
 ### Example Usage
 
 ```jsx
-import {dispatch} from 'jest-circus/build/state';
-
 
 const FETCH_TODOS = 'FETCH_TODOS';
 export const synRedux = new SyntheticRedux({
@@ -131,9 +129,6 @@ Takes in a _SyntheticAction_ and reducer key & returns Redux State handler.
 ### Example
 
 ```jsx
-import { CATEGORY_NAMES } from 'src/constants';
-
-
 const synReducer = SyntheticReducer(synAction, 'list')
 const RootReducer = combineReducers({
   todos: synReducer

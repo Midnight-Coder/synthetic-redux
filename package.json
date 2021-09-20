@@ -1,9 +1,11 @@
 {
   "name": "synthetic-redux",
-  "version": "1.0.3-0",
+  "version": "1.0.3-1",
   "description": "Sets up Redux boilerplate: actions, reducers and redux-saga for most common redux use cases",
   "main": "src/index.js",
-  "files": ["index.js"],
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "predeploy": "parcel build src/index.js --out-dir ./ --no-minify",
     "deploy": "np",

@@ -2,12 +2,12 @@
   "name": "synthetic-redux",
   "version": "1.0.2",
   "description": "Sets up Redux boilerplate: actions, reducers and redux-saga for most common redux use cases",
-  "main": "index.js",
+  "main": "src/index.js",
   "files": [
-    "build/index.transpiled.js"
+    "dist"
   ],
   "scripts": {
-    "predeploy": "rm -rf build && mkdir build && babel index.js src/ --out-file build/index.transpiled.js",
+    "predeploy": "parcel build src/index.js --no-minify",
     "deploy": "np",
     "test": "jest",
     "test:coverage": "npm test -- --coverage",
@@ -37,7 +37,8 @@
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "jest": "^27.1.1",
     "jest-coverage-badges": "^1.0.0",
-    "np": "^7.5.0"
+    "np": "^7.5.0",
+    "parcel-bundler": "^1.12.5"
   },
   "dependencies": {
     "redux-saga": "^1.1.3"

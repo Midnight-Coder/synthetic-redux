@@ -8,7 +8,7 @@
     "index.js"
   ],
   "scripts": {
-    "predeploy": "parcel build --no-optimize",
+    "predeploy": "parcel build src/index.js --out-dir ./index.js --no-minify",
     "deploy": "np",
     "test": "jest",
     "test:coverage": "npm test -- --coverage",

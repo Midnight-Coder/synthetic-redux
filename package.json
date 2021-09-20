@@ -1,6 +1,6 @@
 {
   "name": "synthetic-redux",
-  "version": "1.0.2-3",
+  "version": "1.0.2-4",
   "description": "Sets up Redux boilerplate: actions, reducers and redux-saga for most common redux use cases",
   "main": "index.js",
   "files": [

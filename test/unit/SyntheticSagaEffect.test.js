@@ -9,11 +9,7 @@ describe('Synthetic Saga Effect', () => {
     * This test suite accesses bits of redux-saga internal implementations
     * The internals could change with library upgrades
   */
-  const httpPost = (url, payload) => fetch(url,
-  {
-    body: JSON.stringify(payload),
-    method: 'POST'
-  });
+  const httpPost = (url, payload) => ({url, payload});
 
   const sampleAction = 'SAMPLE_ACTION';
   const syntheticAction = new SyntheticAction({ type: sampleAction }, CATEGORY_NAMES.CRUD);

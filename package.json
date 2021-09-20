@@ -4,10 +4,10 @@
   "description": "Sets up Redux boilerplate: actions, reducers and redux-saga for most common redux use cases",
   "main": "index.js",
   "files": [
-    "dist/index.js"
+    "dist/"
   ],
   "scripts": {
-    "predeploy": " mkdir -p dist && babel index.js src/ --out-file dist/index.js",
+    "predeploy": " mkdir -p dist && babel index.js src/ --out-file dist/index.transpiled.js",
     "deploy": "np",
     "test": "jest",
     "test:coverage": "npm test -- --coverage",

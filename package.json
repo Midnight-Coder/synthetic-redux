@@ -8,7 +8,7 @@
     "index.js"
   ],
   "scripts": {
-    "predeploy": "parcel build src/index.js --out-dir ./index.js --no-minify",
+    "predeploy": "parcel build src/index.js --out-dir ./ --no-minify",
     "deploy": "np",
     "test": "jest",
     "test:coverage": "npm test -- --coverage",
@@ -37,7 +37,7 @@
     "jest": "^27.1.1",
     "jest-coverage-badges": "^1.0.0",
     "np": "^7.5.0",
-    "parcel": "^2.0.0-rc.0"
+    "parcel-bundler": "^1.12.5"
   },
   "dependencies": {
     "redux-saga": "^1.1.3"

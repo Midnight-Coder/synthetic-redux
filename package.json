@@ -4,7 +4,9 @@
   "description": "Sets up Redux boilerplate: actions, reducers and redux-saga for most common redux use cases",
   "source": "src/index.js",
   "main": "index.js",
-  "files": ["index.js"],
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "predeploy": "parcel build --no-optimize",
     "deploy": "np",
@@ -26,6 +28,9 @@
   "author": "Sagar Jhobalia",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "babel-jest": "^27.2.0",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",

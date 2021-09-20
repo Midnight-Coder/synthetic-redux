@@ -3,11 +3,9 @@
   "version": "1.0.3-0",
   "description": "Sets up Redux boilerplate: actions, reducers and redux-saga for most common redux use cases",
   "main": "src/index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["index.js"],
   "scripts": {
-    "predeploy": "parcel build src/index.js --no-minify",
+    "predeploy": "parcel build src/index.js --out-dir ./ --no-minify",
     "deploy": "np",
     "test": "jest",
     "test:coverage": "npm test -- --coverage",

@@ -3,8 +3,8 @@
 
 # build
 .cache/
-dist/
-build/
+index.js
+index.js.map
 
 # editor/IDE
 .idea/

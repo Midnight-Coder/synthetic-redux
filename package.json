@@ -3,8 +3,10 @@
   "version": "1.0.1",
   "description": "Sets up Redux boilerplate: actions, reducers and redux-saga for most common redux use cases",
   "main": "index.js",
+  "files": [
+    "src/"
+  ],
   "scripts": {
-    "build": "parcel build src/index.js && npm run test:badges",
     "test": "jest",
     "test:coverage": "npm test -- --coverage",
     "test:badges": "npm run test:coverage  && jest-coverage-badges"
@@ -14,6 +16,7 @@
     "url": "https://github.com/Midnight-Coder/synthetic-redux.git"
   },
   "keywords": [
+    "synthetic-redux",
     "redux",
     "boilerplate",
     "webapp",
@@ -24,13 +27,13 @@
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/eslint-parser": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "jest": "^27.1.1",
     "jest-coverage-badges": "^1.0.0",
-    "parcel": "^2.0.0-rc.0",
-    "parcel-bundler": "^1.9.4"
+    "np": "^7.5.0"
   },
   "dependencies": {
     "redux-saga": "^1.1.3"

@@ -4,6 +4,7 @@
 # build
 .cache/
 dist/
+build/
 
 # editor/IDE
 .idea/

@@ -1,6 +1,6 @@
 {
   "name": "synthetic-redux",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Sets up Redux boilerplate: actions, reducers and redux-saga for most common redux use cases",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",

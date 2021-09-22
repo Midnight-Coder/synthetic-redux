@@ -1,14 +1,23 @@
 {
   "name": "synthetic-redux",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Sets up Redux boilerplate: actions, reducers and redux-saga for most common redux use cases",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
   "source": "src/index.js",
-  "main": "index.js",
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "index.js"
   ],
   "scripts": {
-    "predeploy": "parcel build src/index.js --out-dir ./ --no-minify",
+    "predeploy": "npm run build",
+    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "watch": "microbundle-crl watch --no-compress --format modern,cjs",
     "deploy": "np",
     "test": "jest",
     "test:coverage": "npm test -- --coverage",
@@ -36,8 +45,8 @@
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "jest": "^27.1.1",
     "jest-coverage-badges": "^1.0.0",
-    "np": "^7.5.0",
-    "parcel-bundler": "^1.12.5"
+    "microbundle-crl": "^0.13.11",
+    "np": "^7.5.0"
   },
   "dependencies": {
     "redux-saga": "^1.1.3"

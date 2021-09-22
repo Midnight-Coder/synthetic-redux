@@ -3,12 +3,13 @@
 
 # build
 .cache/
-.parcel-cache/
+dist/
 index.js
 index.js.map
 
 # editor/IDE
 .idea/
+*.iml
 *.sublime-*
 
 # misc

@@ -1,4 +1,4 @@
-import { ERROR_SUFFIX, SUCCESS_SUFFIX } from '../src/constants';
+import { ERROR_SUFFIX, SUCCESS_SUFFIX } from './constants';
 import { call, put, takeLatest } from 'redux-saga/effects';
 
 

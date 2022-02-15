@@ -1,6 +1,6 @@
 import SyntheticAction from '../../src/SyntheticActions';
 import {
-  CATEGORY, CATEGORY_NAMES, ERROR_SUFFIX, SUCCESS_SUFFIX,
+  CATEGORY, CATEGORY_NAMES, ERROR_SUFFIX, RESET_SUFFIX, SUCCESS_SUFFIX,
 } from '../../src/constants';
 
 
@@ -39,8 +39,15 @@ describe('Synthetic Actions', () => {
     expect(syntheticActionB.ignite()).toMatchObject(anotherAction);
   });
 
+  it('should have getter for RESET action', () => {
+    expect(syntheticAction.reset()).toMatchObject({ type: `${sampleAction}${RESET_SUFFIX}` });
+  });
+
   it('should have getters for auto-generated actions', () => {
-    const expectedSuffixes = [`${sampleAction}${ERROR_SUFFIX}`, `${sampleAction}${SUCCESS_SUFFIX}`];
+    const expectedSuffixes = [
+      `${sampleAction}${ERROR_SUFFIX}`,
+      `${sampleAction}${RESET_SUFFIX}`,
+      `${sampleAction}${SUCCESS_SUFFIX}`];
     expect(syntheticAction.suffixNames).toBeDefined();
     expect(syntheticAction.suffixNames).toEqual(expect.arrayContaining(expectedSuffixes));
     expect(syntheticAction.suffixSyntheticActions).toBeDefined();

@@ -1,4 +1,4 @@
-import { CATEGORY, CATEGORY_NAMES } from './constants';
+import {CATEGORY, CATEGORY_NAMES, RESET_SUFFIX} from './constants';
 
 
 class SyntheticActions {
@@ -37,6 +37,11 @@ class SyntheticActions {
   get igniteName() { return this.#baseAction.type; }
 
   get igniteSyntheticActions() { return this.#baseAction; }
+
+  get reset() {
+    const o = this.#actionBunch[`${this.#baseAction.type}${RESET_SUFFIX}`].generator;
+    return o;
+  }
 
   get suffixSyntheticActions() { return this.#actionBunch; }
 

@@ -5,6 +5,8 @@ export const CATEGORY_NAMES = {
 
 export const ERROR_SUFFIX = '_ERROR';
 
+export const RESET_SUFFIX = '_RESET';
+
 export const SUCCESS_SUFFIX = '_SUCCESS';
 
 export const CATEGORY = {
@@ -12,5 +14,6 @@ export const CATEGORY = {
   [CATEGORY_NAMES.CRUD]: [
     { typeSuffix: ERROR_SUFFIX, args: ['cb', 'payload'] },
     { typeSuffix: SUCCESS_SUFFIX, args: ['cb', 'payload'] },
+    { typeSuffix: RESET_SUFFIX },
   ],
 };

@@ -25,11 +25,19 @@ describe('Synthetic Redux', () => {
     expect(synRedux.suffixSyntheticActions).toBeDefined();
   });
 
-  it('should expose setters for custom ignite wrappers', () => {
+  it('should expose getters & setters for custom ignite wrappers', () => {
     const spy = jest.fn();
     expect(synRedux.ignite).toBeDefined();
     synRedux.ignite = spy;
     synRedux.ignite();
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('should expose getters & setters for custom reset wrappers', () => {
+    const spy = jest.fn();
+    expect(synRedux.reset).toBeDefined();
+    synRedux.reset = spy;
+    synRedux.reset();
     expect(spy).toHaveBeenCalled();
   });
 });

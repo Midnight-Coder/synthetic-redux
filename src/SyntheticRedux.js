@@ -13,12 +13,15 @@ class SyntheticRedux {
 
   #ignite;
 
+  #reset
+
   constructor(actionObject, reducerKey) {
     this.#actions = new SyntheticActions(actionObject, CATEGORY_NAMES.CRUD);
     const rKey = reducerKey || this.#actions.igniteName;
     this.#reducer = SyntheticReducer(this.#actions, rKey);
     this.#sagaEffect = SyntheticSagaEffect(this.#actions);
     this.#ignite = this.#actions.ignite;
+    this.#reset = this.#actions.reset;
   }
 
   get actions() { return this.#actions; }
@@ -28,6 +31,10 @@ class SyntheticRedux {
   set ignite(fn) { this.#ignite = fn; }
 
   get igniteName() { return this.#actions.igniteName; }
+
+  get reset() { return this.#reset; }
+
+  set reset(fn) { this.#reset = fn; }
 
   get suffixSyntheticActions() { return this.#actions.suffixSyntheticActions; }
 

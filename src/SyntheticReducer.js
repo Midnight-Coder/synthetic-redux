@@ -5,7 +5,10 @@ const SyntheticReducer = (syntheticAction, objKey) => (state = {}, action) => {
   if (action.type === syntheticAction.igniteName) {
     return {
       ...state,
-      [objKey]: { [CATEGORY_NAMES.IGNITE]: true },
+      [objKey]: {
+        [CATEGORY_NAMES.IGNITE]: true,
+        isLoading: true,
+      },
     };
   }
   if (syntheticAction.suffixNames.includes(action.type)) {

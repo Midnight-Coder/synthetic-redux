@@ -1,7 +1,6 @@
 import SyntheticAction from '../../src/SyntheticActions';
 import SyntheticReducer from '../../src/SyntheticReducer';
 import { CATEGORY_NAMES } from '../../src/constants';
-import { SyntheticRedux } from '../../index';
 
 
 describe('Synthetic Reducer', () => {

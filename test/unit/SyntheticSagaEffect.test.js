@@ -65,4 +65,17 @@ describe('Synthetic Saga Effect', () => {
     expect(sagaFn.next().done).toEqual(true);
   });
 
+  it('should await for response before triggering error or success', function () {
+    let e;
+    try { return e.error; }
+    catch(err) { e = err; }
+    const exceptionResponse = { payload: { exception: e }};
+    const suffixActions = syntheticAction.suffixSyntheticActions;
+    const errorAction = suffixActions[`${syntheticAction.igniteName}${ERROR_SUFFIX}`];
+    sagaFn.next();
+    expect(sagaFn.next().value).toEqual(
+      put(errorAction.generator(exceptionResponse)),
+    );
+    expect(sagaFn.next().done).toEqual(true);
+  });
 });

@@ -9,18 +9,17 @@ const SyntheticSagaEffect = (syntheticAction) => {
   const igniteAction = syntheticAction.igniteName;
 
   const sagaFn = function* sagaFn(action) {
-    let response;
-    try { response = yield call(action.method, action.url, action.payload); }
-    catch (exception) { return yield put(errorAction.generator({payload: { exception }})); }
-    if (response.error) {
-      if(typeof action.errorHandler === 'function') {
-        yield put(action.errorHandler(response, action));
+    try {
+      const response = yield call(action.method, action.url, action.payload);
+      if (response.error) {
+        if(typeof action.errorHandler === 'function') {
+          yield put(action.errorHandler(response, action));
+        }
+        return yield put(errorAction.generator({ payload: response }));
       }
-      return yield put(errorAction.generator({ payload: response }));
+      else { return yield put(successAction.generator({ payload: response })); }
     }
-    else {
-      return yield put(successAction.generator({ payload: response }));
-    }
+    catch (exception) { return yield put(errorAction.generator({payload: { exception }})); }
   };
   return takeLatest(igniteAction, sagaFn);
 };
